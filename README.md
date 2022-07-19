@@ -39,13 +39,15 @@ Networking:
   Docker network is defined and used by all containers. Container name can be used as FQDN for intra-connection among containers.
   For example, inside of jenkins, you can "ssh gitlab" to access gitlab container
 
+<pre>
 Ports:
   Jenkins:
       8080:8080
-      8022:22\
+      8022:22
   Gitlab:
       80:80
       443:443
-      8122:22\
+      8122:22
   Sonarqube:
       9000:9000
+</pre>

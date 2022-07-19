@@ -1,0 +1,43 @@
+version: '3'
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    ports:
+      - '8080:8080'
+      - '8022:22'
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+    networks:
+      - net
+  gitlab:
+    container_name: gitlab
+    image: 'gitlab/gitlab-ce:latest'
+    deploy:
+      resources:
+        limits:
+          memory: 4096M
+    ports:
+      - '80:80'
+      - '443:443'
+      - '8122:22'
+    volumes:
+      - ./gitlab_home/config:/etc/gitlab
+      - ./gitlab_home/logs:/var/log/gitlab
+      - ./gitlab_home/data:/var/opt/gitlab
+    shm_size: '256m'
+    networks:
+      - net 
+  sonarqube:
+    image: sonarqube:lts-community
+    container_name: sonarqube
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./sonarqube_home/sonar_data:/opt/sonarqube/data
+      - ./sonarqube_home/sonar_extensions:/opt/sonarqube/extensions
+      - ./sonarqube_home/sonar_logs:/opt/sonarqube/logs
+    networks:
+      - net
+networks:
+  net:

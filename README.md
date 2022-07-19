@@ -1,13 +1,13 @@
 # devops-project
 
 Usage:
-  1. start vagrant
+  1. start vagrant \n
     a. Run *vagrant up* for the first time, provision will be automatically run and VM is prepared, containers are started.
-  2. start containers
+  2. start containers \n
     Subsequent vagrant command will only bring up VM, *docker-compose -f /srv/docker-compose.yaml up -d* needs to be used to start all containers
-  3. stop containers
+  3. stop containers \n
     docker-compose -f /srv/docker-compose.yaml down
-  4. shutdown vagrant
+  4. shutdown vagrant \n
     *vagrant halt*
   
   *Note:* DO NOT use "vagrant destroy" after you started project work, it will delete the VM so that all data will be lost.
@@ -20,7 +20,7 @@ Vagrant:
     
     ==> default: Available bridged network interfaces:
       1) en0: Wi-Fi (AirPort)
-      2) en6: USB Ethernet(?)
+      2) en6: USB Ethernet(?) \n
       .....
       
     b. Select the desired network using index. Desired network is usally the one that is used for Internet and DHCPed from your router.

@@ -1,13 +1,13 @@
 # devops-project
 
 Usage:
-  1. start vagrant \n
+  1. start vagrant \
     a. Run *vagrant up* for the first time, provision will be automatically run and VM is prepared, containers are started.
-  2. start containers \n
+  2. start containers \
     Subsequent vagrant command will only bring up VM, *docker-compose -f /srv/docker-compose.yaml up -d* needs to be used to start all containers
-  3. stop containers \n
+  3. stop containers \
     docker-compose -f /srv/docker-compose.yaml down
-  4. shutdown vagrant \n
+  4. shutdown vagrant \
     *vagrant halt*
   
   *Note:* DO NOT use "vagrant destroy" after you started project work, it will delete the VM so that all data will be lost.
@@ -20,7 +20,7 @@ Vagrant:
     
     ==> default: Available bridged network interfaces:
       1) en0: Wi-Fi (AirPort)
-      2) en6: USB Ethernet(?) \n
+      2) en6: USB Ethernet(?) \
       .....
       
     b. Select the desired network using index. Desired network is usally the one that is used for Internet and DHCPed from your router.
@@ -40,12 +40,12 @@ Networking:
   For example, inside of jenkins, you can "ssh gitlab" to access gitlab container
 
 Ports:
-  Jenkins:
-    8080:8080
-    8022:22
-  Gitlab:
-    80:80
-    443:443
-    8122:22
-  Sonarqube:
-    9000:9000
+  Jenkins:\
+    8080:8080\
+    8022:22\
+  Gitlab:\
+    80:80\
+    443:443\
+    8122:22\
+  Sonarqube:\
+    9000:9000\

@@ -5,12 +5,12 @@ Vagrant:
  2. The Vagrantfile allocates 10G memory and 4 cores of CPU to vagrant box. Note: 8G memory might work too
  3. The Vagrantfile is defined to use bridged network.
     a. During setup stage, you will be prompted to select a network to bridge: 
-    --------------------------------------------------------
+    
     ==> default: Available bridged network interfaces:
       1) en0: Wi-Fi (AirPort)
       2) en6: USB Ethernet(?)
       .....
-    --------------------------------------------------------
+      
     b. Select the desired network using index. Desired network is usally the one that is used for Internet and DHCPed from your router.
  4. Usage:
     a. vagrant up

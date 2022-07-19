@@ -1,5 +1,17 @@
 # devops-project
 
+Usage:
+  1. start vagrant
+    a. Run *vagrant up* for the first time, provision will be automatically run and VM is prepared, containers are started.
+  2. start containers
+    Subsequent vagrant command will only bring up VM, *docker-compose -f /srv/docker-compose.yaml up -d* needs to be used to start all containers
+  3. stop containers
+    docker-compose -f /srv/docker-compose.yaml down
+  4. shutdown vagrant
+    *vagrant halt*
+  
+  *Note:* DO NOT use "vagrant destroy" after you started project work, it will delete the VM so that all data will be lost.
+
 Vagrant:
  1. Creates vagrant box that will host jenkins, gitlab and sonarqube containers.
  2. The Vagrantfile allocates 10G memory and 4 cores of CPU to vagrant box. Note: 8G memory might work too
@@ -12,10 +24,8 @@ Vagrant:
       .....
       
     b. Select the desired network using index. Desired network is usally the one that is used for Internet and DHCPed from your router.
- 4. Usage:
-    a. vagrant up
- 5. Vagrant provision will do all necessary configurations and bring up all containers
- 6. Vagrant prints all IPs in the VM, which will be used to access the containers.
+ 4. Vagrant provision will do all necessary configurations and bring up all containers
+ 5. Vagrant prints all IPs in the VM, which will be used to access the containers.
 
 Docker-compose:
  Usage: 

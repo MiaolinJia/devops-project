@@ -40,12 +40,12 @@ Networking:
   For example, inside of jenkins, you can "ssh gitlab" to access gitlab container
 
 Ports:
-  Jenkins:\
-      8080:8080\
+  Jenkins:
+      8080:8080
       8022:22\
-  Gitlab:\
-      80:80\
-      443:443\
+  Gitlab:
+      80:80
+      443:443
       8122:22\
-  Sonarqube:\
+  Sonarqube:
       9000:9000
